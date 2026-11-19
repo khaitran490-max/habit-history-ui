@@ -18,7 +18,7 @@ ngày hoàn thành / bỏ lỡ / chưa tới. Giai đoạn này dùng dữ liệ
 ## Ghi chú về cách thực hiện
 
 Phần XML được dựng với sự hỗ trợ của AI (Claude) dựa trên phân công của nhóm,
-sau đó được xem lại và chỉnh sửa. (Bổ sung ở đây những chỗ bạn thực sự tự sửa.)
+sau đó được xem lại và chỉnh sửa.
 
 ## Cách dùng
 
