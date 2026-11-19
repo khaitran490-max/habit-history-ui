@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Phụ trách: Trần Quang Khải (khaitran490-max)
+    Màn hình: Ô ngày trong lịch (dùng trong RecyclerView của fragment_history.xml)
+
+    Một ô = một TextView hình tròn. Trạng thái đổi bằng cách gán background:
+      - Đã hoàn thành : @drawable/bg_day_done   (chữ màu on_primary)
+      - Bỏ lỡ         : @drawable/bg_day_missed (chữ màu text_primary)
+      - Hôm nay       : @drawable/bg_day_today  (chữ màu text_primary)
+      - Chưa tới      : không nền               (chữ màu text_secondary)
+    Ô trống đầu tháng (ngày thuộc tháng trước): để text rỗng, không nền.
+    Dữ liệu giả ở giai đoạn 2: xem thuộc tính tools:*, chỉ hiện trong preview.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:padding="@dimen/space_xs">
+
+    <TextView
+        android:id="@+id/textDay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_body"
+        tools:background="@drawable/bg_day_done"
+        tools:text="12"
+        tools:textColor="@color/on_primary" />
+
+</FrameLayout>

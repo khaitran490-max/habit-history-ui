@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AppHabitBaKhiValorant</string>
+    <string name="add_habit">Thêm thói quen</string>
+    <string name="hint_habit_name">Tên thói quen (ví dụ: Đọc sách)</string>
+    <string name="hint_habit_description">Mô tả ngắn (không bắt buộc)</string>
+    <string name="save">Lưu</string>
+    <string name="error_name_required">Vui lòng nhập tên thói quen</string>
+    <string name="streak_format">Chuỗi hiện tại: %d ngày</string>
+
+    <!-- Màn Lịch sử (Khải) -->
+    <string name="history_title">Lịch sử</string>
+    <string name="history_prev_month">Tháng trước</string>
+    <string name="history_next_month">Tháng sau</string>
+    <string name="weekday_mon">T2</string>
+    <string name="weekday_tue">T3</string>
+    <string name="weekday_wed">T4</string>
+    <string name="weekday_thu">T5</string>
+    <string name="weekday_fri">T6</string>
+    <string name="weekday_sat">T7</string>
+    <string name="weekday_sun">CN</string>
+    <string name="legend_done">Hoàn thành</string>
+    <string name="legend_missed">Bỏ lỡ</string>
+    <string name="legend_future">Chưa tới</string>
+</resources>

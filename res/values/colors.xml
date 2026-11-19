@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Phụ trách: Trần Quang Khải. Màu tạm, thay bằng bảng màu chốt trên Figma. -->
+<resources>
+    <color name="primary">#FF4655</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="background">#0F1923</color>
+    <color name="surface">#1F2731</color>
+    <color name="text_primary">#ECE8E1</color>
+    <color name="text_secondary">#8B978F</color>
+    <color name="done">#2EC4B6</color>
+    <color name="missed">#5A6470</color>
+</resources>

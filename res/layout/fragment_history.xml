@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Phụ trách: Trần Quang Khải (khaitran490-max)
+    Màn hình: Lịch sử theo tháng (Chức năng 5)
+
+    Từ trên xuống: tiêu đề -> chọn thói quen (chip) -> chuyển tháng -> tên thứ
+    -> lưới lịch 7 cột -> chú thích màu.
+    Giai đoạn 2: dữ liệu giả (tools:*), chưa cần logic. Giai đoạn 3 sẽ gắn
+    adapter vào @id/recyclerCalendar và xử lý nút @id/buttonPrevMonth / buttonNextMonth.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:padding="@dimen/space_m">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/history_title"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold" />
+
+    <!-- Chọn thói quen -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_m"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupHabits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:selectionRequired="true"
+            app:singleLine="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Đọc sách" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tập thể dục" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.Material3.Chip.Filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Uống nước" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!-- Thanh chuyển tháng -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_m"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/buttonPrevMonth"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/history_prev_month"
+            android:src="@drawable/ic_chevron_left" />
+
+        <TextView
+            android:id="@+id/textMonth"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Tháng 11, 2026"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_body"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/buttonNextMonth"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/history_next_month"
+            android:src="@drawable/ic_chevron_right" />
+    </LinearLayout>
+
+    <!-- Tên thứ trong tuần: thứ 2 đến chủ nhật, 7 cột bằng nhau -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_s"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/space_xs">
+
+        <TextView style="@style/HistoryWeekday" android:text="@string/weekday_mon" />
+        <TextView style="@style/HistoryWeekday" android:text="@string/weekday_tue" />
+        <TextView style="@style/HistoryWeekday" android:text="@string/weekday_wed" />
+        <TextView style="@style/HistoryWeekday" android:text="@string/weekday_thu" />
+        <TextView style="@style/HistoryWeekday" android:text="@string/weekday_fri" />
+        <TextView style="@style/HistoryWeekday" android:text="@string/weekday_sat" />
+        <TextView style="@style/HistoryWeekday" android:text="@string/weekday_sun" />
+    </LinearLayout>
+
+    <!-- Lưới lịch: 7 cột. tools:* chỉ để xem trước 35 ô trong Android Studio -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_xs"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="7"
+        tools:itemCount="35"
+        tools:listitem="@layout/item_calendar_day" />
+
+    <!-- Chú thích màu -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_m"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/HistoryLegend"
+            android:drawableStart="@drawable/bg_legend_dot_done"
+            android:text="@string/legend_done" />
+
+        <TextView
+            style="@style/HistoryLegend"
+            android:drawableStart="@drawable/bg_legend_dot_missed"
+            android:text="@string/legend_missed" />
+
+        <TextView
+            style="@style/HistoryLegend"
+            android:drawableStart="@drawable/bg_legend_dot_future"
+            android:text="@string/legend_future" />
+    </LinearLayout>
+
+</LinearLayout>
