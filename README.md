@@ -3,7 +3,7 @@
 Phần giao diện do Trần Quang Khải phụ trách trong project nhóm **AppHabitBaKhiValorant**
 (Android, Kotlin, XML, môn Mobile Application Programming).
 
-Repo nhóm: https://github.com/dzpcrypt/AppHabitBaKhiValorant (đối chiếu lại link thật của nhóm)
+Repo nhóm: https://github.com/dzpcrypt/AppHabitBaKhiValorant
 
 ## Nội dung
 
